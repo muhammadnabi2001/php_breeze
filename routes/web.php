@@ -56,12 +56,12 @@ Route::get('users',[UserController::class,'users'])->name('users')->middleware(C
 Route::get('usercreate',[UserController::class,'usercreate'])->name('usercreate')->middleware(Check::class);
 Route::post('userstore',[UserController::class,'store'])->name('userstore')->middleware(Check::class);
 Route::get('useredit{user}',[UserController::class,'edit'])->name('useredit')->middleware(Check::class);
-Route::post('userupdate{user}',[UserController::class,'update'])->name('userupdate')->middleware(Check::class);
+Route::post('userupdate{user}',[UserController::class,'update'])->name('userupdate');
 Route::get('userdelete{user}',[UserController::class,'delete'])->name('userdelete')->middleware(Check::class);
 
-Route::get('roles',[RoleController::class,'index'])->name('roles')->middleware(Check::class);
-Route::get('rolecreate',[RoleController::class,'rolecreate'])->name('rolecreate')->middleware(Check::class);
-Route::post('rolestore',[RoleController::class,'store'])->name('rolestore')->middleware(Check::class);
-Route::get('roleedit{role}',[RoleController::class,'roleedit'])->name('roleedit')->middleware(Check::class);
-Route::post('roleupdate{role}',[RoleController::class,'update'])->name('roleupdate')->middleware(Check::class);
-Route::get('roledelete{role}',[RoleController::class,'destroy'])->name('roledelete')->middleware(Check::class);
+Route::get('roles',[RoleController::class,'index'])->name('roles');
+Route::get('rolecreate',[RoleController::class,'rolecreate'])->name('rolecreate');
+Route::post('rolestore',[RoleController::class,'store'])->name('rolestore');
+Route::get('roleedit{role}',[RoleController::class,'roleedit'])->name('roleedit');
+Route::post('roleupdate{role}',[RoleController::class,'update'])->name('roleupdate');
+Route::get('roledelete{role}',[RoleController::class,'destroy'])->name('roledelete');

@@ -116,7 +116,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
-
+                        @if(Auth::user()->roles->contains('name', 'admin') || Auth::user()->roles->contains('name', 'post'))
                         <li class="nav-item">
                             <a href="/post" class="nav-link">
                                 <i class="nav-icon fas fa-bars"></i>
@@ -125,7 +125,8 @@
                                 </p>
                             </a>
                         </li>
-                        
+                        @endif
+                        @if(Auth::user()->roles->contains('name', 'admin') || Auth::user()->roles->contains('name', 'kitob'))
                         <li class="nav-item">
                             <a href="/kitob" class="nav-link">
                                 <i class="nav-icon fas fa-bars"></i>
@@ -134,6 +135,8 @@
                                 </p>
                             </a>
                         </li>
+                        @endif
+                        @if(Auth::user()->roles->contains('name', 'admin') || Auth::user()->roles->contains('name', 'telefon'))
                         <li class="nav-item">
                             <a href="/telefon" class="nav-link">
                                 <i class="nav-icon fas fa-bars"></i>
@@ -142,7 +145,8 @@
                                 </p>
                             </a>
                         </li>
-                        {{-- @if(Auth::user()->roles->contains('name','admin')) --}}
+                        @endif
+                        @if(Auth::user()->roles->contains('name', 'admin') || Auth::user()->roles->contains('name', 'user'))
                             
                         <li class="nav-item">
                             <a href="/users" class="nav-link">
@@ -152,8 +156,8 @@
                                 </p>
                             </a>
                         </li>
-                        {{-- @endif --}}
-                        {{-- @if(Auth::user()->roles->contains('name','admin')) --}}
+                        @endif
+                        @if(Auth::user()->roles->contains('name','admin'))
                             
                         <li class="nav-item">
                             <a href="/roles" class="nav-link">
@@ -163,15 +167,8 @@
                                 </p>
                             </a>
                         </li>
-                        {{-- @endif --}}
-                        <li class="nav-item">
-                            <a href="/permission" class="nav-link">
-                                <i class="nav-icon fas fa-bars"></i>
-                                <p>
-                                    Permissions
-                                </p>
-                            </a>
-                        </li>
+                        @endif
+                        
                        
                         <li class="nav-item">
                             <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
